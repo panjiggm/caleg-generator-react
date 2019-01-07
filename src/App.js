@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="ui container">
         <Header />
-        <Body title="Fruits List" />
+        <Body title="Lengkapi Form Dibawah ini" />
         <Footer />
       </div>
     );
