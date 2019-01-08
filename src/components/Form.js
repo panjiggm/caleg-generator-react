@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import Banner from "./Banner";
-
 class Form extends Component {
   constructor() {
     super();
@@ -16,9 +14,7 @@ class Form extends Component {
   }
 
   nama = e => {
-    this.setState({
-      nama: e.target.value
-    });
+    this.setState({ nama: e.target.value });
   };
 
   dapil = e => {
@@ -26,7 +22,7 @@ class Form extends Component {
   };
 
   program1 = e => {
-    this.setState({ naprogram1ma: e.target.value });
+    this.setState({ program1: e.target.value });
   };
 
   program2 = e => {
@@ -39,11 +35,16 @@ class Form extends Component {
 
   submit = e => {
     e.preventDefault();
-    console.log(this.state.nama);
-    console.log(this.state.dapil);
-    console.log(this.state.program1);
-    console.log(this.state.program2);
-    console.log(this.state.program3);
+
+    const detailCaleg = {
+      nama: this.state.nama,
+      dapil: this.state.dapil,
+      program1: this.state.program1,
+      program2: this.state.program3,
+      program3: this.state.program3
+    };
+
+    this.props.dataCaleg(detailCaleg);
   };
 
   render() {
@@ -91,7 +92,6 @@ class Form extends Component {
           <input className="ui button" type="submit" value="Submit" />
         </form>
         <div className="ui dividing header" />
-        <Banner />
       </div>
     );
   }

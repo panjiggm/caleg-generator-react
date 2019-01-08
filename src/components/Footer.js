@@ -4,7 +4,9 @@ class Footer extends Component {
   render() {
     return (
       <footer className="ui center aligned segment">
-        <p>Copyright &copy; 2019</p>
+        <p>
+          Nurhadi - Aldo &copy; 2019 <strong>#McQueenYaQueen</strong>
+        </p>
       </footer>
     );
   }
