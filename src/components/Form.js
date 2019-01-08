@@ -44,6 +44,14 @@ class Form extends Component {
       program3: this.state.program3
     };
 
+    this.setState({
+      nama: "",
+      dapil: null,
+      program1: "",
+      program2: "",
+      program3: ""
+    });
+
     this.props.dataCaleg(detailCaleg);
   };
 
@@ -53,7 +61,12 @@ class Form extends Component {
         <form className="ui form" onSubmit={this.submit}>
           <div className="field">
             <label htmlFor="name">Nama</label>
-            <input type="text" placeholder="Nama" onChange={this.nama} />
+            <input
+              type="text"
+              placeholder="Nama"
+              onChange={this.nama}
+              value={this.state.nama}
+            />
           </div>
           <div className="field">
             <label htmlFor="name">Dapil</label>
@@ -73,6 +86,7 @@ class Form extends Component {
               id="program1"
               placeholder="Program Kerja 1"
               onChange={this.program1}
+              value={this.state.program1}
             />
           </div>
           <div className="field">
@@ -81,6 +95,7 @@ class Form extends Component {
               id="program2"
               placeholder="Program Kerja 2"
               onChange={this.program2}
+              value={this.state.program2}
             />
           </div>
           <div className="field">
@@ -89,6 +104,7 @@ class Form extends Component {
               id="program3"
               placeholder="Program Kerja 3"
               onChange={this.program3}
+              value={this.state.program3}
             />
           </div>
           <input className="ui button" type="submit" value="Submit" />
