@@ -40,7 +40,7 @@ class Form extends Component {
       nama: this.state.nama,
       dapil: this.state.dapil,
       program1: this.state.program1,
-      program2: this.state.program3,
+      program2: this.state.program2,
       program3: this.state.program3
     };
 
