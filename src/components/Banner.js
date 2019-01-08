@@ -6,18 +6,14 @@ class Banner extends Component {
       <div className="ui red segment">
         {this.props.calegInfo.map((caleg, index) => {
           return (
-            <div className="ui cards centered" key={index}>
-              <div className="card">
-                <div className="content">
-                  <div className="header">{caleg.nama}</div>
-                  <div className="meta">Dapil : {caleg.dapil}</div>
-                  <div className="description">
-                    <p>{caleg.program1}</p>
-                    <p>{caleg.program2}</p>
-                    <p>{caleg.program3}</p>
-                  </div>
-                </div>
-              </div>
+            <div className="ui teal message" key={index}>
+              <div className="header">{caleg.nama}</div>
+              <div className="description">Dapil : {caleg.dapil}</div>
+              <ul className="list">
+                <li>{caleg.program1}</li>
+                <li>{caleg.program2}</li>
+                <li>{caleg.program3}</li>
+              </ul>
             </div>
           );
         })}

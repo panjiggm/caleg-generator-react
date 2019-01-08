@@ -61,7 +61,9 @@ class Form extends Component {
               <option defaultValue>--Pilih Dapil--</option>
               <option value="Wakanda">Wakanda</option>
               <option value="Asgard">Asgard</option>
+              <option value="Marineford">Marineford</option>
               <option value="Cybertron">Cybertron</option>
+              <option value="Konoha">Konoha</option>
             </select>
           </div>
           <div className="field">
