@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 
+import { Segment } from "semantic-ui-react";
+
 class Footer extends Component {
   render() {
     return (
-      <footer className="ui center aligned segment">
+      <Segment textAlign="center">
         <p>
           Nurhadi - Aldo &copy; 2019 <strong>#McQueenYaQueen</strong>
         </p>
-      </footer>
+      </Segment>
     );
   }
 }

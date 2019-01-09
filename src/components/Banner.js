@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 
+import { Segment, Message } from "semantic-ui-react";
+
 class Banner extends Component {
   render() {
     return (
-      <div className="ui red segment">
+      <Segment color="red">
         {this.props.calegInfo.map((caleg, index) => {
           return (
-            <div className="ui olive message" key={index}>
+            <Message color="olive" key={index}>
               <div className="header">{caleg.nama}</div>
               <p className="description">Dapil : {caleg.dapil}</p>
               <ul className="list">
@@ -14,10 +16,10 @@ class Banner extends Component {
                 <li>{caleg.program2}</li>
                 <li>{caleg.program3}</li>
               </ul>
-            </div>
+            </Message>
           );
         })}
-      </div>
+      </Segment>
     );
   }
 }

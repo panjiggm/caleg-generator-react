@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import { Segment } from "semantic-ui-react";
 
 class Header extends Component {
   render() {
     return (
-      <header className="ui center aligned segment">
-        <h2>Caleg Generator</h2>
-      </header>
+      <Segment textAlign="center">
+        <h2>Dildo Caleg Generator</h2>
+      </Segment>
     );
   }
 }

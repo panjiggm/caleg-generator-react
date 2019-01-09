@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
-class Form extends Component {
+import { Button, Form } from "semantic-ui-react";
+
+class Forms extends Component {
   constructor() {
     super();
 
@@ -58,8 +60,8 @@ class Form extends Component {
   render() {
     return (
       <div>
-        <form className="ui form" onSubmit={this.submit}>
-          <div className="field">
+        <Form onSubmit={this.submit}>
+          <Form.Field>
             <label htmlFor="name">Nama</label>
             <input
               type="text"
@@ -67,8 +69,8 @@ class Form extends Component {
               onChange={this.nama}
               value={this.state.nama}
             />
-          </div>
-          <div className="field">
+          </Form.Field>
+          <Form.Field>
             <label htmlFor="name">Dapil</label>
             <select className="ui fluid search dropdown" onChange={this.dapil}>
               <option defaultValue>--Pilih Dapil--</option>
@@ -78,8 +80,8 @@ class Form extends Component {
               <option value="Cybertron">Cybertron</option>
               <option value="Konoha">Konoha</option>
             </select>
-          </div>
-          <div className="field">
+          </Form.Field>
+          <Form.Field>
             <label htmlFor="program"> Program Kerja </label>
             <input
               type="text"
@@ -88,8 +90,8 @@ class Form extends Component {
               onChange={this.program1}
               value={this.state.program1}
             />
-          </div>
-          <div className="field">
+          </Form.Field>
+          <Form.Field>
             <input
               type="text"
               id="program2"
@@ -97,8 +99,8 @@ class Form extends Component {
               onChange={this.program2}
               value={this.state.program2}
             />
-          </div>
-          <div className="field">
+          </Form.Field>
+          <Form.Field>
             <input
               type="text"
               id="program3"
@@ -106,13 +108,15 @@ class Form extends Component {
               onChange={this.program3}
               value={this.state.program3}
             />
-          </div>
-          <input className="ui button" type="submit" value="Submit" />
-        </form>
+          </Form.Field>
+          <Button className="ui button" type="submit">
+            Submit
+          </Button>
+        </Form>
         <div className="ui dividing header" />
       </div>
     );
   }
 }
 
-export default Form;
+export default Forms;

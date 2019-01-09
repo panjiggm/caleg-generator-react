@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Form from "./Form";
+import Forms from "./Forms";
 import Banner from "./Banner";
 
 class Body extends Component {
@@ -21,7 +21,7 @@ class Body extends Component {
       <div className="ui two column centered grid">
         <div className="column">
           <h4>{this.props.title}</h4>
-          <Form dataCaleg={this.submit} />
+          <Forms dataCaleg={this.submit} />
           <Banner calegInfo={this.state.data} />
         </div>
       </div>
