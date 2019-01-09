@@ -6,9 +6,16 @@ class Banner extends Component {
     return (
       <Segment color="red">
         {this.props.calegInfo.map((caleg, index) => {
-          console.log(caleg.dapil);
           return (
             <Message color="olive" key={index}>
+              <i
+                className="close icon"
+                onClick={() =>
+                  window.confirm("Are u sure ?")
+                    ? this.props.deleteBanner(index)
+                    : false
+                }
+              />
               <Message.Header>{caleg.nama}</Message.Header>
               <Divider />
               <div>Dapil : {caleg.dapil}</div>

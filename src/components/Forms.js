@@ -10,8 +10,8 @@ const options = [
 ];
 
 class Forms extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       nama: "",
@@ -26,8 +26,8 @@ class Forms extends Component {
     this.setState({ nama: e.target.value });
   };
 
-  dapil = e => {
-    this.setState({ dapil: e.target.value });
+  dapil = (e, { value }) => {
+    this.setState({ dapil: value });
   };
 
   program1 = e => {
@@ -78,6 +78,7 @@ class Forms extends Component {
           <Form.Select
             fluid
             label="Gender"
+            onChange={this.dapil}
             options={options}
             placeholder="Pilih Dapil"
           />

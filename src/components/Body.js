@@ -17,13 +17,26 @@ class Body extends Component {
     this.setState(state => ({ data: state.data.concat(caleg) }));
   };
 
+  removeBanner = bannerCaleg => {
+    const newBanner = this.state.data.filter((banner, index) => {
+      return index !== bannerCaleg;
+    });
+
+    this.setState({
+      data: newBanner
+    });
+  };
+
   render() {
     return (
       <Grid centered columns={2}>
         <Grid.Column>
           <h4>{this.props.title}</h4>
           <Forms dataCaleg={this.submit} />
-          <Banner calegInfo={this.state.data} />
+          <Banner
+            calegInfo={this.state.data}
+            deleteBanner={this.removeBanner}
+          />
         </Grid.Column>
       </Grid>
     );
