@@ -1,6 +1,13 @@
 import React, { Component } from "react";
+import { Button, Form, Divider } from "semantic-ui-react";
 
-import { Button, Form } from "semantic-ui-react";
+const options = [
+  { key: "w", text: "Wakanda", value: "Wakanda" },
+  { key: "a", text: "Asgard", value: "Asgard" },
+  { key: "m", text: "Marineford", value: "Marineford" },
+  { key: "c", text: "Cybertron", value: "Cybertron" },
+  { key: "k", text: "Konoha", value: "Konoha" }
+];
 
 class Forms extends Component {
   constructor() {
@@ -61,59 +68,41 @@ class Forms extends Component {
     return (
       <div>
         <Form onSubmit={this.submit}>
-          <Form.Field>
-            <label htmlFor="name">Nama</label>
-            <input
-              type="text"
-              placeholder="Nama"
-              onChange={this.nama}
-              value={this.state.nama}
-            />
-          </Form.Field>
-          <Form.Field>
-            <label htmlFor="name">Dapil</label>
-            <select className="ui fluid search dropdown" onChange={this.dapil}>
-              <option defaultValue>--Pilih Dapil--</option>
-              <option value="Wakanda">Wakanda</option>
-              <option value="Asgard">Asgard</option>
-              <option value="Marineford">Marineford</option>
-              <option value="Cybertron">Cybertron</option>
-              <option value="Konoha">Konoha</option>
-            </select>
-          </Form.Field>
-          <Form.Field>
-            <label htmlFor="program"> Program Kerja </label>
-            <input
-              type="text"
-              id="program1"
-              placeholder="Program Kerja 1"
-              onChange={this.program1}
-              value={this.state.program1}
-            />
-          </Form.Field>
-          <Form.Field>
-            <input
-              type="text"
-              id="program2"
-              placeholder="Program Kerja 2"
-              onChange={this.program2}
-              value={this.state.program2}
-            />
-          </Form.Field>
-          <Form.Field>
-            <input
-              type="text"
-              id="program3"
-              placeholder="Program Kerja 3"
-              onChange={this.program3}
-              value={this.state.program3}
-            />
-          </Form.Field>
-          <Button className="ui button" type="submit">
-            Submit
-          </Button>
+          <Form.Input
+            fluid
+            label="Nama"
+            placeholder="Nama"
+            onChange={this.nama}
+            value={this.state.nama}
+          />
+          <Form.Select
+            fluid
+            label="Gender"
+            options={options}
+            placeholder="Pilih Dapil"
+          />
+          <Form.Input
+            fluid
+            label="Program Kerja"
+            placeholder="Program Kerja 1"
+            onChange={this.program1}
+            value={this.state.program1}
+          />
+          <Form.Input
+            fluid
+            placeholder="Program Kerja 2"
+            onChange={this.program2}
+            value={this.state.program2}
+          />
+          <Form.Input
+            fluid
+            placeholder="Program Kerja 3"
+            onChange={this.program3}
+            value={this.state.program3}
+          />
+          <Button type="submit">Submit</Button>
         </Form>
-        <div className="ui dividing header" />
+        <Divider />
       </div>
     );
   }

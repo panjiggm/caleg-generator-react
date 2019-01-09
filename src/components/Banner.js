@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-
-import { Segment, Message } from "semantic-ui-react";
+import { Segment, Message, Card } from "semantic-ui-react";
 
 class Banner extends Component {
   render() {
