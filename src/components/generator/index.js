@@ -1,6 +1,9 @@
 import React, { Component } from "react";
-import { Grid } from "semantic-ui-react";
+import { Grid, Container } from "semantic-ui-react";
 
+import Navbar from "../Navbar";
+import Heading from "./Heading";
+import Footer from "./Footer";
 import Forms from "./Forms";
 import Banner from "./Banner";
 
@@ -29,16 +32,21 @@ class Body extends Component {
 
   render() {
     return (
-      <Grid centered columns={2}>
-        <Grid.Column>
-          <h4>{this.props.title}</h4>
-          <Forms dataCaleg={this.submit} />
-          <Banner
-            calegInfo={this.state.data}
-            deleteBanner={this.removeBanner}
-          />
-        </Grid.Column>
-      </Grid>
+      <Container>
+        <Navbar />
+        <Heading />
+        <Grid centered columns={2}>
+          <Grid.Column>
+            <h4>{this.props.title}</h4>
+            <Forms dataCaleg={this.submit} />
+            <Banner
+              calegInfo={this.state.data}
+              deleteBanner={this.removeBanner}
+            />
+          </Grid.Column>
+        </Grid>
+        <Footer />
+      </Container>
     );
   }
 }
