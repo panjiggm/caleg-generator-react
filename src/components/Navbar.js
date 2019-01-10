@@ -19,23 +19,29 @@ class Navbar extends Component {
           name="home"
           active={activeItem === "home"}
           onClick={this.handleItemClick}
+          as={Link}
+          to="/"
         >
-          <Link to="/">Home</Link>
+          Home
         </Menu.Item>
         <Menu.Item
           name="generator"
           active={activeItem === "generator"}
           onClick={this.handleItemClick}
+          as={Link}
+          to="/generator"
         >
-          <Link to="/generator">Generator</Link>
+          Generator
         </Menu.Item>
         <Menu.Menu position="right">
           <Menu.Item
             name="about"
             active={activeItem === "about"}
             onClick={this.handleItemClick}
+            as={Link}
+            to="/about"
           >
-            <Link to="/about">About</Link>
+            About
           </Menu.Item>
         </Menu.Menu>
       </Menu>

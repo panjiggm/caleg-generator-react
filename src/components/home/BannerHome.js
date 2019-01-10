@@ -1,16 +1,45 @@
 import React, { Component } from "react";
-import { Container, Message, Image } from "semantic-ui-react";
+import { Container, Message } from "semantic-ui-react";
 
 class BannerHome extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      quotes: [
+        {
+          header: "Nurhadi - Aldo Quotes",
+          content: "Democrazy adalah tempat bersuara bagi orang-orang kaya"
+        },
+        {
+          header: "Nurhadi - Aldo Quotes",
+          content: "MAMPUS HUJAN !!!"
+        },
+        {
+          header: "Nurhadi - Aldo Quotes",
+          content: ""
+        },
+        {
+          header: "Nurhadi - Aldo Quotes",
+          content: "Selamat datang di whatdefak Indonesia"
+        },
+        {
+          header: "Nurhadi - Aldo Quotes",
+          content: "Aparat didalam negeri akan menjadi petani PNS gol AB"
+        }
+      ]
+    };
+  }
+
   render() {
     return (
       <Container>
-        <Message warning>
-          <Message.Header> Nurhadi - Aldo Quotes </Message.Header>
-          <Message.Content>
-            Democrazy adalah tempat bersuara bagi orang-orang kaya
-          </Message.Content>
-        </Message>
+        {this.state.quotes.map((quote, index) => (
+          <Message warning key={index}>
+            <Message.Header> {quote.header} </Message.Header>
+            <Message.Content>{quote.content}</Message.Content>
+          </Message>
+        ))}
       </Container>
     );
   }
