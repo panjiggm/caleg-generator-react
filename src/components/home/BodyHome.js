@@ -5,19 +5,26 @@ class BodyHome extends Component {
   render() {
     return (
       <Container>
-        <Message info>
-          <Form>
-            <Form.Field>
-              <label>Username</label>
-              <input type="text" placeholder="Username" />
-            </Form.Field>
-            <Form.Field>
-              <label>Password</label>
-              <input type="password" placeholder="Password" />
-            </Form.Field>
-            <Button type="submit">Submit</Button>
-          </Form>
-        </Message>
+        <Message
+          attached
+          header="Selamat Datang di Dildo Caleg Generator"
+          content="Jika Anda adalah seorang Caleg dari Partai PUKI, Silahkan Login"
+        />
+        <Form className="attached fluid segment">
+          <Form.Input
+            fluid
+            label="Username"
+            placeholder="Username"
+            type="text"
+          />
+          <Form.Input
+            fluid
+            label="Password"
+            placeholder="Password"
+            type="password"
+          />
+          <Button color="blue">Submit</Button>
+        </Form>
       </Container>
     );
   }
