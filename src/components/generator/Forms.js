@@ -22,24 +22,8 @@ class Forms extends Component {
     };
   }
 
-  nama = e => {
-    this.setState({ nama: e.target.value });
-  };
-
-  dapil = (e, { value }) => {
-    this.setState({ dapil: value });
-  };
-
-  program1 = e => {
-    this.setState({ program1: e.target.value });
-  };
-
-  program2 = e => {
-    this.setState({ program2: e.target.value });
-  };
-
-  program3 = e => {
-    this.setState({ program3: e.target.value });
+  handleInput = e => {
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   submit = e => {
@@ -53,6 +37,18 @@ class Forms extends Component {
       program3: this.state.program3
     };
 
+    if (
+      this.state.nama === "" ||
+      this.state.dapil === "" ||
+      this.state.program1 === "" ||
+      this.state.program2 === "" ||
+      this.state.program3 === ""
+    ) {
+      return window.confirm("Please fill in all fields !!");
+    } else {
+      this.props.dataCaleg(detailCaleg);
+    }
+
     this.setState({
       nama: "",
       dapil: null,
@@ -60,8 +56,6 @@ class Forms extends Component {
       program2: "",
       program3: ""
     });
-
-    this.props.dataCaleg(detailCaleg);
   };
 
   clearDataCaleg = () => {
@@ -76,42 +70,52 @@ class Forms extends Component {
         <Form onSubmit={this.submit}>
           <Form.Input
             fluid
+            name="nama"
             label="Nama"
             placeholder="Nama"
-            onChange={this.nama}
+            onChange={this.handleInput}
             value={this.state.nama}
           />
           <Form.Select
             fluid
+            name="dapil"
             label="Gender"
-            onChange={this.dapil}
+            onChange={this.handleInput}
             options={options}
             placeholder="Pilih Dapil"
           />
           <Form.Input
             fluid
+            name="program1"
             label="Program Kerja"
             placeholder="Program Kerja 1"
-            onChange={this.program1}
+            onChange={this.handleInput}
             value={this.state.program1}
           />
           <Form.Input
             fluid
+            name="program2"
             placeholder="Program Kerja 2"
-            onChange={this.program2}
+            onChange={this.handleInput}
             value={this.state.program2}
           />
           <Form.Input
             fluid
+            name="program3"
             placeholder="Program Kerja 3"
-            onChange={this.program3}
+            onChange={this.handleInput}
             value={this.state.program3}
           />
           <Divider />
           <Button color="teal" type="submit">
             Submit
           </Button>
-          <Button type="button" color="red" onClick={this.clearDataCaleg}>
+          <Button
+            type="button"
+            color="red"
+            floated="right"
+            onClick={this.clearDataCaleg}
+          >
             Clear
           </Button>
         </Form>
