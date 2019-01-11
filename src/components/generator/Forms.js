@@ -68,22 +68,24 @@ class Forms extends Component {
     return (
       <div>
         <Form onSubmit={this.submit}>
-          <Form.Input
-            fluid
-            name="nama"
-            label="Nama"
-            placeholder="Nama"
-            onChange={this.handleInput}
-            value={this.state.nama}
-          />
-          <Form.Select
-            fluid
-            name="dapil"
-            label="Gender"
-            onChange={this.handleInput}
-            options={options}
-            placeholder="Pilih Dapil"
-          />
+          <Form.Group widths="equal">
+            <Form.Input
+              fluid
+              name="nama"
+              label="Nama"
+              placeholder="Nama"
+              onChange={this.handleInput}
+              value={this.state.nama}
+            />
+            <Form.Select
+              fluid
+              name="dapil"
+              label="Gender"
+              onChange={this.handleInput}
+              options={options}
+              placeholder="Pilih Dapil"
+            />
+          </Form.Group>
           <Form.Input
             fluid
             name="program1"
