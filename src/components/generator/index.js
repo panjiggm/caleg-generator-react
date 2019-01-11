@@ -30,6 +30,10 @@ class Body extends Component {
     });
   };
 
+  clearBanner = () => {
+    this.setState({ data: [] });
+  };
+
   render() {
     return (
       <Container>
@@ -38,7 +42,7 @@ class Body extends Component {
         <Grid centered columns={2}>
           <Grid.Column>
             <h4>{this.props.title}</h4>
-            <Forms dataCaleg={this.submit} />
+            <Forms dataCaleg={this.submit} clearCaleg={this.clearBanner} />
             <Banner
               calegInfo={this.state.data}
               deleteBanner={this.removeBanner}

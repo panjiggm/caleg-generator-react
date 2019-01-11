@@ -17,7 +17,7 @@ class BannerHome extends Component {
         },
         {
           header: "Nurhadi - Aldo Quotes",
-          content: ""
+          content: "Saya sedang bersama PELAKOR (PEnyanyi LAgu KORea)"
         },
         {
           header: "Nurhadi - Aldo Quotes",

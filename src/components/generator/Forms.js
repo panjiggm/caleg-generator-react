@@ -64,6 +64,12 @@ class Forms extends Component {
     this.props.dataCaleg(detailCaleg);
   };
 
+  clearDataCaleg = () => {
+    if (window.confirm("Are u sure ?")) {
+      return this.props.clearCaleg();
+    }
+  };
+
   render() {
     return (
       <div>
@@ -101,7 +107,13 @@ class Forms extends Component {
             onChange={this.program3}
             value={this.state.program3}
           />
-          <Button type="submit">Submit</Button>
+          <Divider />
+          <Button color="teal" type="submit">
+            Submit
+          </Button>
+          <Button type="button" color="red" onClick={this.clearDataCaleg}>
+            Clear
+          </Button>
         </Form>
         <Divider />
       </div>
